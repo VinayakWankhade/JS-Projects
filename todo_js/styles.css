@@ -1,0 +1,298 @@
+/* Base styles for both themes */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.add-task-btn {
+  padding: 10px 20px;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Theme toggle button */
+#themeToggleBtn {
+  margin-left: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  background-color: #444;
+  color: white;
+  cursor: pointer;
+}
+
+#themeToggleBtn:hover {
+  background-color: #666;
+}
+
+/* App layout container */
+.app-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 60px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  color: inherit;
+  margin-bottom: 10px;
+}
+
+.sidebar button {
+  padding: 10px;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.2s;
+}
+
+.sidebar button:hover {
+  background-color: #555;
+}
+
+.sidebar .active-filter {
+  background-color: #6c63ff;
+  color: white;
+  font-weight: bold;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+}
+
+.task-list {
+  margin-top: 20px;
+}
+
+.task-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.task-actions button {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.edit-btn {
+  background-color: #ffa726;
+  color: white;
+}
+
+.active-filter {
+  background-color: #ffffff;
+  color: #6c63ff;
+  font-weight: bold;
+}
+
+.dragging {
+  opacity: 0.5;
+}
+
+.drag-over {
+  border: 2px dashed #6c63ff;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.modal-content input {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.close-btn {
+  float: right;
+  cursor: pointer;
+  color: #aaa;
+  font-size: 20px;
+}
+
+.close-btn:hover {
+  color: red;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.dark-mode .task-item {
+  background-color: #292c3e;
+}
+
+.dark-mode .modal-content {
+  background-color: #1e1e2f;
+  color: white;
+}
+
+.dark-mode #themeToggleBtn {
+  background-color: #444;
+  color: white;
+}
+
+.dark-mode .sidebar {
+  background-color: #1e1e2f;
+  color: white;
+}
+
+.dark-mode .sidebar button {
+  background-color: #333;
+  color: white;
+}
+
+.dark-mode .sidebar button:hover {
+  background-color: #555;
+}
+
+.dark-mode .sidebar .active-filter {
+  background-color: #6c63ff;
+  color: white;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.light-mode .task-item {
+  background-color: #ffffff;
+}
+
+.light-mode .modal-content {
+  background-color: #ffffff;
+  color: #333;
+}
+
+.light-mode #themeToggleBtn {
+  background-color: #ddd;
+  color: #222;
+}
+
+.light-mode .active-filter {
+  background-color: #6c63ff;
+  color: white;
+}
+
+.light-mode .sidebar {
+  background-color: #e1e1e1;
+  color: #333;
+}
+
+.light-mode .sidebar button {
+  background-color: #ccc;
+  color: #333;
+}
+
+.light-mode .sidebar button:hover {
+  background-color: #bbb;
+}
+
+.light-mode .sidebar .active-filter {
+  background-color: #6c63ff;
+  color: white;
+}
+
+/* Fade in/out animations */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeOut {
+  from {opacity: 1; transform: translateY(0);}
+  to {opacity: 0; transform: translateY(10px);}
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.4s ease forwards;
+}
+
+/* Sidebar collapsed style */
+#sidebar {
+  transition: transform 0.3s ease;
+}
+
+#sidebar.collapsed {
+  transform: translateX(-100%);
+}
+
+/* Active filter button styling */
+.active-filter {
+  background-color: #6c63ff;
+  color: white;
+  font-weight: bold;
+}

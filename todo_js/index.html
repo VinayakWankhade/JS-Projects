@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>To-Do App with Modal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <button id="themeToggleBtn" style="position: absolute; top: 10px; right: 10px;">
+    🌙 Toggle Theme
+  </button>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <h3>Filters</h3>
+      <button id="filter-all" onclick="setFilter('all')">All</button>
+      <button id="filter-completed" onclick="setFilter('completed')">Completed</button>
+      <button id="filter-inProgress" onclick="setFilter('inProgress')">In Progress</button>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+      <h2>📝 To-Do List</h2>
+      <button class="add-task-btn" onclick="openModal()">+ New Task</button>
+
+      <div id="taskList" class="task-list"></div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="taskModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3>Add a New Task</h3>
+      <input type="text" id="modalTaskInput" placeholder="Enter task..." />
+      <input type="date" id="modalTaskDate" />
+      <br />
+      <button onclick="addTaskFromModal()" class="add-task-btn">Add Task</button>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

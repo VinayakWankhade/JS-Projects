@@ -1,0 +1,262 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f0f0f;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  height: 100vh;
+  gap: 40px;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+}
+
+/* Calculator styling */
+.calculator {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
+  width: 300px;
+}
+
+.calc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+body.light {
+  background-color: #f4f4f4;
+  color: #000;
+}
+
+body.light .calculator,
+body.light .history {
+  background-color: #fff;
+  color: #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light .btn.operator {
+  background-color: #e0e0e0;
+  color: #000;
+}
+
+body.light .btn.action {
+  background-color: #d32f2f;
+  color: white;
+}
+
+body.light .btn.equal {
+  background: linear-gradient(to bottom right, #1976d2, #0d47a1);
+  color: white;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+}
+
+.display {
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 2rem;
+  text-align: right;
+  margin-bottom: 20px;
+  height: 60px;
+  overflow-x: auto;
+}
+
+/* Button grid */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.btn {
+  padding: 18px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  filter: brightness(1.2);
+}
+
+/* Operator buttons */
+.op {
+  background: linear-gradient(145deg, #1d1e2f, #223);
+  color: #94b3fd;
+}
+
+.equal {
+  background: linear-gradient(145deg, #5a5eff, #8000ff);
+  color: white;
+  font-weight: bold;
+}
+
+/* Special red/purple buttons */
+[data-value="AC"],
+[data-value="DEL"],
+[data-value="+/-"] {
+  background: linear-gradient(to bottom, #5b1a25, #7e2437);
+  color: white;
+}
+
+/* ===================== */
+/* ===== History ======= */
+/* ===================== */
+
+.history {
+  background-color: #1a1a1a;
+  border-radius: 20px;
+  padding: 20px;
+  width: 250px;
+  height: fit-content;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 10px;
+}
+
+.history-header button {
+  background: none;
+  border: none;
+  color: #ccc;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.history-header button:hover {
+  color: red;
+}
+
+#historyList {
+  list-style: none;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  color: #ccc;
+}
+
+/* Each history entry */
+.history-item {
+  background-color: #2c2c2c;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+
+.history-item small {
+  font-size: 12px;
+  color: #bbb;
+}
+
+.history-item strong {
+  font-size: 18px;
+  color: white;
+}
+
+/* Light Mode History Styles */
+body.light .history-header button {
+  color: #555;
+}
+
+body.light .history-item {
+  background-color: #ececec;
+}
+
+body.light .history-item small {
+  color: #666;
+}
+
+body.light .history-item strong {
+  color: #000;
+}
+
+/* ===================== */
+/* ===== Header Bar ==== */
+/* ===================== */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #18191c;
+  padding: 16px 20px 0 20px;
+}
+
+.app-icon {
+  font-size: 1.5em;
+  margin-right: 8px;
+}
+
+.app-title {
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #fff;
+  margin-right: auto;
+}
+
+.header-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.header-icon {
+  color: #bdbdbd;
+  font-size: 1.3em;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.header-icon:hover {
+  color: #fff;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #232428;
+  margin: 12px 0 0 0;
+}
+
+body.light .header {
+  background: #fff;
+}
+body.light .app-title {
+  color: #222;
+}
+body.light .header-icon {
+  color: #888;
+}
+body.light .header-icon:hover {
+  color: #222;
+}
