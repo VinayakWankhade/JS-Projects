@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChronoSphere</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 transition-colors duration-300">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 shadow-sm">
+    <div class="flex items-center gap-2 text-2xl font-bold">
+      <span class="text-blue-600 text-3xl">🕒</span>
+      <span class="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">ChronoSphere</span>
+    </div>
+    <button id="toggleTheme" class="bg-violet-500 text-white px-4 py-2 rounded-md shadow hover:bg-violet-600">Dark Mode</button>
+  </header>
+
+  <!-- Controls -->
+  <div class="flex justify-center gap-4 mt-8">
+    <button class="px-4 py-2 border-2 border-indigo-400 text-indigo-600 rounded-md shadow bg-white font-medium hover:bg-indigo-100">
+      🕓 Analog
+    </button>
+    <button class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100">💻 Digital</button>
+    <button class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100">⏱️ Stopwatch</button>
+    <button class="px-4 py-2 border border-gray-300 rounded-md hover:bg-gray-100">⏳ Timer</button>
+  </div>
+
+  <!-- Clock -->
+  <div class="flex justify-center mt-10">
+    <div class="relative w-64 h-64 bg-white rounded-full border-4 border-gray-200 shadow-xl flex items-center justify-center">
+      <!-- Hour hand -->
+      <div id="hour" class="absolute w-1 h-20 bg-black origin-bottom translate-y-1/2 rotate-[225deg]"></div>
+      <!-- Minute hand -->
+      <div id="minute" class="absolute w-1 h-28 bg-black origin-bottom translate-y-1/2 rotate-[300deg]"></div>
+      <!-- Second hand -->
+      <div id="second" class="absolute w-0.5 h-32 bg-red-500 origin-bottom translate-y-1/2 rotate-[330deg]"></div>
+
+      <!-- Clock center -->
+      <div class="w-4 h-4 bg-black rounded-full absolute"></div>
+
+      <!-- Numbers -->
+      <div class="absolute inset-0 flex items-center justify-center text-xl font-medium">
+        <div class="w-full h-full flex justify-center items-center text-gray-400">Clock</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Date and Time Display -->
+  <div class="mt-10 flex justify-center">
+    <div class="bg-white px-6 py-4 rounded-xl shadow text-center">
+      <p class="text-gray-500 mb-1">Tuesday, June 17, 2025</p>
+      <p class="text-2xl font-mono tracking-widest">07:38:56</p>
+    </div>
+  </div>
+
+  <script>
+    // Dark mode toggle
+    const toggleBtn = document.getElementById('toggleTheme');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('bg-gray-900');
+      document.body.classList.toggle('text-white');
+      toggleBtn.textContent = toggleBtn.textContent === 'Dark Mode' ? 'Light Mode' : 'Dark Mode';
+    });
+  </script>
+</body>
+</html>
